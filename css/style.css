@@ -19,7 +19,19 @@ html {
    height: 100%;
 }
 
+
 /* Переопределение стилей bootstrap */
+@media (max-width: 768px) {
+   .jumbotron {
+      margin-top: 100px;
+   }
+
+   .container .navbar-header {
+      margin-left: 0px;
+   }
+}  
+ 
+
 .jumbotron {
    background-color: rgb(226, 202, 129, 0.25) !important;
 }
@@ -108,8 +120,8 @@ img.star-5 {
 }
 
 #carousel-example-generic {
-   margin-left: 100px;
-   margin-right: 100px
+   margin-left: 10%;
+   margin-right: 10%
 }
 
 .thumbnail .caption h3 {
