@@ -99,7 +99,16 @@ let mainMenu = [
 
 ];
 
-
+function InitiolizeSubSubMenu()
+{
+  // Добавляем событие для открытия подменю
+  $('li.dropdown-submenu a[data-toggle="dropdown"]').on('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    $('li.dropdown-submenu').not($(this).parent()).removeClass('open');
+    $(this).parent().toggleClass('open');
+  });
+}
 
 function CreateSubSubMenu(currentPath, parentElement)
 {
@@ -196,15 +205,7 @@ function CreateMenu(currentPath) {
       elem.after(CreateSubMenu(currentPath, parent));
     }
   });
-
-  // Добавляем событие для открытия подменю
-  $('li.dropdown-submenu a[data-toggle="dropdown"]').on('click', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    $('li.dropdown-submenu').not($(this).parent()).removeClass('open');
-    $(this).parent().toggleClass('open');
-  });
-
+  InitiolizeSubSubMenu();
 }
 
 
